@@ -109,24 +109,25 @@
         </div>
     </section>
 
-    @if( $errors->any() )
-        <div class="p-3 bg-danger">
-            <strong>Please fix the following problems with the form.</strong>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
-    @if( Session::has('message') && Session::get('message') === 'success' )
-        <div class="alert alert-success">Guy has received your message!</div>
-    @endif
-
+   
     <!-- Contact Section -->
     <section id="contact" class="container content-section text-center">
         <div class="row">
+            @if( $errors->any() )
+                <div class="p-3 bg-danger">
+                    <strong>Please fix the following problems with the form.</strong>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+    
+            @if( Session::has('message') && Session::get('message') === 'success' )
+                <div class="alert alert-success">Guy has received your message!</div>
+            @endif
+
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Contact Guy Smiley</h2>
                 <p>Remember Guy Smiley?  Yeah, he wants to hear from you.</p>

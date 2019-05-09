@@ -35,7 +35,7 @@ class ContactFormController extends BaseController
         // with the form errors so we can display them
         // in the blade template
         if ($validator->fails()) {
-            return redirect('/')
+            return redirect('/#contact')
                 ->withErrors($validator)
                 ->withInput();
         }
@@ -45,14 +45,14 @@ class ContactFormController extends BaseController
         $newContact = $this->buildContact($request->all());
         ContactGuy::notify($newContact);
 
-        return redirect('/')->with([
+        return redirect('/#contact')->with([
             'message' => 'success'
         ]);
     }
 
     private function buildContact($postParams)
     {
-        $phone = empty($postParams['phone']) ? '' : $postParams['phon'];
+        $phone = empty($postParams['phone']) ? '' : $postParams['phone'];
 
         $contact = new Contact;
         $contact['full_name'] = $postParams['full_name'];
