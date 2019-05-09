@@ -20,7 +20,7 @@ php -S 127.0.0.1:9999 -t public
 ```
 
 ### Caveats
-While I know it is bad practice to version control ENV files, however, I decided to add it to the repo
+While I know it is bad practice to version control ENV files, I decided to add it to the repo
 in this case so there's less steps for you the reviewer to get the app started. 
 
 While I could have created the application using 'vanilla' PHP, I opted to use a framework in this case as I felt it
